@@ -15,7 +15,7 @@ namespace asprule1020.Models
         public required string EstName { get; set; }
         public string? EstProvince { get; set; }
 
-        public int? RegisterId { get; set; }
+        public string? RegisterId { get; set; }
         [ForeignKey("RegisterId")]
         [ValidateNever]
         public Register? Register { get; set; }
