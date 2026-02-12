@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -7,115 +8,117 @@ using System.Text;
 
 namespace asprule1020.Models
 {
-    public class Register
+    public class Register : IdentityUser
     {
         [Key]
         [Required]
-        public string transId { get; set; }
+        public Guid Id { get; set; } = Guid.NewGuid();
+
         [Required]
-        public string rule1020Id { get; set; }
+        public string TransId { get; set; }
+        public string? Rule1020Id { get; set; }
+        public string UserId { get; set; }
         [Required]
-        public string userName { get; set; } 
+        public string UserName { get; set; }
 
         [Required, EmailAddress]
         [MaxLength(50)]
-        public string estEmail { get; set; } 
+        public string estEmail { get; set; }
 
         [Required]
         [StringLength(11, MinimumLength = 11, ErrorMessage = "Mobile number must be 11 digits")]
-        public string estPhone { get; set; } 
+        public string EstPhone { get; set; } 
+
+        //[Required]
+        //public string password { get; set; } 
 
         [Required]
-        public string password { get; set; } 
+        public string EstName { get; set; } 
 
         [Required]
-        public string estName { get; set; } 
+        public string EstType { get; set; } 
 
         [Required]
-        public string estType { get; set; } 
-
+        public string EstLegalOrg { get; set; } 
+        public string? EstLegalOrgOther { get; set; }
         [Required]
-        public string estLegalOrg { get; set; } 
-        public string? estLegalOrgOther { get; set; }
+        public string EstRegion { get; set; } 
         [Required]
-        public string estRegion { get; set; } 
+        public string EstProvince { get; set; } 
         [Required]
-        public string estProvince { get; set; } 
+        public string EstCityMun { get; set; } 
         [Required]
-        public string estCityMun { get; set; } 
+        public string EstBrgy { get; set; } 
         [Required]
-        public string estBrgy { get; set; } 
-        [Required]
-        [MaxLength(150)]
-        public string estStreet { get; set; } 
+        public string EstStreet { get; set; } 
         [Required]
         [MaxLength(50)]
-        public string estOwnerFirst { get; set; } 
+        public string EstOwnerFirst { get; set; } 
         [MaxLength(50)]
-        public string? estOwnerMid { get; set; }
+        public string? EstOwnerMid { get; set; }
         [Required]
         [MaxLength(50)]
-        public string estOwnerLast { get; set; } 
+        public string EstOwnerLast { get; set; } 
         [Required]
-        public string estCurrentCap { get; set; } 
+        public string EstCurrentCap { get; set; } 
         [Required]
-        public string estTotalAssets { get; set; } 
+        public string EstTotalAssets { get; set; } 
         [Required]
-        public string estBusinessNature { get; set; } 
+        public string EstBusinessNature { get; set; } 
         [Required]
         [StringLength(50, MinimumLength = 3, ErrorMessage = "Provide Valid Business Nature")]
-        public string? estOtherBusNature { get; set; }
+        public string? EstOtherBusNature { get; set; }
         [Required]
-        public int estMaleCount { get; set; }
+        public int EstMaleCount { get; set; }
         [Required]
-        public int estFemaleCount { get; set; }
-        public int estTotalEmployees { get; set; }
-        public List<string>? estTechInfo1 { get; set; }
-        public string? estTechInfo1Other { get; set; }
-        public List<string>? estTechInfo2 { get; set; } 
-        public string? estTechInfo2Other { get; set; }
+        public int EstFemaleCount { get; set; }
+        public int EstTotalEmployees { get; set; }
+        public List<string>? EstTechInfo1 { get; set; }
+        public string? EstTechInfo1Other { get; set; }
+        public List<string>? EstTechInfo2 { get; set; }
+        public string? EstTechInfo2Other { get; set; }
         [Required]
-        public string estChemSubstance { get; set; } 
+        public string EstChemSubstance { get; set; } 
         [Required]
         [StringLength(50, MinimumLength = 5, ErrorMessage = "SEC Company Registration Number / DTI Business Name No. must be between 5 and 50 characters")]
-        public string estSECNumber { get; set; } 
+        public string EstSECNumber { get; set; } 
         [Required]
-        public DateTime? estSECDateIssued { get; set; }
-        [Required]
-        [StringLength(50, MinimumLength = 5, ErrorMessage = "Business or Mayor's Permit must be between 3 and 50 characters")]
-        public string estBisPermitNumber { get; set; } 
-        public DateTime? estBisPermitDateIssued { get; set; }
-        public DateTime? estBisPermitValidityDate { get; set; }
+        public DateTime? EstSECDateIssued { get; set; }
         [Required]
         [StringLength(50, MinimumLength = 5, ErrorMessage = "Business or Mayor's Permit must be between 3 and 50 characters")]
-        public string estOwnerValidIDNumber { get; set; } 
+        public string EstBisPermitNumber { get; set; } 
+        public DateTime? EstBisPermitDateIssued { get; set; }
+        public DateTime? EstBisPermitValidityDate { get; set; }
+        [Required]
+        [StringLength(50, MinimumLength = 5, ErrorMessage = "Business or Mayor's Permit must be between 3 and 50 characters")]
+        public string EstOwnerValidIDNumber { get; set; } 
         [MaxLength(50)]
-        public DateTime? estOwnerValidIDDateIssued { get; set; }
-        public DateTime? estOwnerValidIDDateExpire { get; set; }
-        public DateTime? estOwnerValidIDDate { get; set; }
+        public DateTime? EstOwnerValidIDDateIssued { get; set; }
+        public DateTime? EstOwnerValidIDDateExpire { get; set; }
+        public DateTime? EstOwnerValidIDDate { get; set; }
         [Required]
-        public string estSECFile { get; set; }
+        public string EstSECFile { get; set; }
         [Required]
-        public string estBisPermitFile { get; set; }
+        public string EstBisPermitFile { get; set; }
         [Required]
-        public string estOwnerValidIDFile { get; set; }
-        public string estEvalName { get; set; }
-        public DateTime estEvalDate { get; set; }
-        public string estEvalRemarks { get; set; } 
-        public string estPoHeadName { get; set; } 
-        public string estPoHeadEvalDate { get; set; } 
-        public string estPoHeadRemarks{ get; set; } 
-        public string estEvalEmailSendStatus{ get; set; } 
-        public DateTime estReopeningDate { get; set; }
-        public string estReasonForUpdate { get; set; } = string.Empty;
-        public bool estIsUpdating { get; set; } = false; 
-        public bool estIsEmailApprovedSent { get; set; } = false;
-        public DateTime estEmailApprovedSentDate { get; set; }
-        public bool estIsEmailReapplicationSent { get; set; } = true;
-        public DateTime estEmailReapplicationSentDate { get; set; }
-        public string estEvalAssinged { get; set; } = "Evaluator";
-        public string estStatus { get; set; } = "For Review";
-        public DateTime estRegistrationDate { get; set; } = DateTime.Now;
+        public string EstOwnerValidIDFile { get; set; }
+        public string EstEvalName { get; set; }
+        public DateTime EstEvalDate { get; set; }
+        public string EstEvalRemarks { get; set; } 
+        public string EstPoHeadName { get; set; } 
+        public string EstPoHeadEvalDate { get; set; } 
+        public string EstPoHeadRemarks { get; set; } 
+        public string EstEvalEmailSendStatus { get; set; } 
+        public DateTime EstReopeningDate { get; set; }
+        public string EstReasonForUpdate { get; set; } = string.Empty;
+        public bool EstIsUpdating { get; set; } = false; 
+        public bool EstIsEmailApprovedSent { get; set; } = false;
+        public DateTime EstEmailApprovedSentDate { get; set; }
+        public bool EstIsEmailReapplicationSent { get; set; } = true;
+        public DateTime EstEmailReapplicationSentDate { get; set; }
+        public string EstEvalAssinged { get; set; } = "Evaluator";
+        public string EstStatus { get; set; } = "For Review";
+        public DateTime EstRegistrationDate { get; set; } = DateTime.Now;
 
     }
 }
