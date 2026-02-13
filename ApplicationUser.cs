@@ -11,11 +11,11 @@ namespace asprule1020.Models
     public class ApplicationUser: IdentityUser
     {
         [Required]
-        public required string EstUsername { get; set; }
-        public required string EstName { get; set; }
+        public string EstUsername { get; set; }
+        public string EstName { get; set; }
         public string? EstProvince { get; set; }
 
-        public string? RegisterId { get; set; }
+        public Guid? RegisterId { get; set; }
         [ForeignKey("RegisterId")]
         [ValidateNever]
         public Register? Register { get; set; }

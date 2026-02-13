@@ -21,10 +21,6 @@ namespace asprule1020.Models
         [Required]
         public string UserName { get; set; }
 
-        [Required, EmailAddress]
-        [MaxLength(50)]
-        public string estEmail { get; set; }
-
         [Required]
         [StringLength(11, MinimumLength = 11, ErrorMessage = "Mobile number must be 11 digits")]
         public string EstPhone { get; set; } 
