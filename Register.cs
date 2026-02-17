@@ -17,7 +17,6 @@ namespace asprule1020.Models
         [Required]
         public string TransId { get; set; }
         public string? Rule1020Id { get; set; }
-        public string UserId { get; set; }
         [Required]
         public string UserName { get; set; }
 
@@ -61,8 +60,6 @@ namespace asprule1020.Models
         public string EstTotalAssets { get; set; } 
         [Required]
         public string EstBusinessNature { get; set; } 
-        [Required]
-        [StringLength(50, MinimumLength = 3, ErrorMessage = "Provide Valid Business Nature")]
         public string? EstOtherBusNature { get; set; }
         [Required]
         public int EstMaleCount { get; set; }
@@ -78,18 +75,17 @@ namespace asprule1020.Models
         [Required]
         [StringLength(50, MinimumLength = 5, ErrorMessage = "SEC Company Registration Number / DTI Business Name No. must be between 5 and 50 characters")]
         public string EstSECNumber { get; set; } 
-        [Required]
         public DateTime? EstSECDateIssued { get; set; }
         [Required]
         [StringLength(50, MinimumLength = 5, ErrorMessage = "Business or Mayor's Permit must be between 3 and 50 characters")]
         public string EstBisPermitNumber { get; set; }
-        public string EstIsPeza { get; set; }
+        [Required]
+        public bool EstIsPeza { get; set; } = false;
         public DateTime? EstBisPermitDateIssued { get; set; }
         public DateTime? EstBisPermitValidityDate { get; set; }
         [Required]
         [StringLength(50, MinimumLength = 5, ErrorMessage = "Business or Mayor's Permit must be between 3 and 50 characters")]
         public string EstOwnerValidIDNumber { get; set; } 
-        [MaxLength(50)]
         public DateTime? EstOwnerValidIDDateIssued { get; set; }
         public DateTime? EstOwnerValidIDDateExpire { get; set; }
         public DateTime? EstOwnerValidIDDate { get; set; }
