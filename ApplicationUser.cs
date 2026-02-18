@@ -19,5 +19,7 @@ namespace asprule1020.Models
         [ForeignKey("RegisterId")]
         [ValidateNever]
         public Register? Register { get; set; }
+        [NotMapped]
+        public string Role { get; set; }
     }
 }
