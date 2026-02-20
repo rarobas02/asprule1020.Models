@@ -11,8 +11,11 @@ namespace asprule1020.Models
     public class ApplicationUser: IdentityUser
     {
         [Required]
-        public string EstUsername { get; set; }
-        public string EstName { get; set; }
+        public string? FirstName { get; set; }
+        public string? MiddleName { get; set; }
+        [Required]
+        public string? LastName { get; set; }
+        [Required]
         public string? EstProvince { get; set; }
 
         public Guid? RegisterId { get; set; }
@@ -20,6 +23,7 @@ namespace asprule1020.Models
         [ValidateNever]
         public Register? Register { get; set; }
         [NotMapped]
-        public string Role { get; set; }
+        [ValidateNever]
+        public string? Role { get; set; }
     }
 }
