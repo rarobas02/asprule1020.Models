@@ -12,6 +12,9 @@ namespace asprule1020.Models.ViewModel
         public ApplicationUser? ApplicationUser { get; set; }
         [Required] 
         [DataType(DataType.Password)]
+        public Guid Id { get; set; }
+        [DataType(DataType.Password)]
+        [Required]
         public string? Password { get; set; }
         public string? SelectedRoleId { get; set; }
         [ValidateNever]
