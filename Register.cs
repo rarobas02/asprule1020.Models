@@ -99,7 +99,7 @@ namespace asprule1020.Models
         public DateTime? EstEvalDate { get; set; }
         public string? EstEvalRemarks { get; set; } 
         public string? EstPoHeadName { get; set; } 
-        public string? EstPoHeadEvalDate { get; set; } 
+        public DateTime? EstPoHeadEvalDate { get; set; } 
         public string? EstPoHeadRemarks { get; set; } 
         public string? EstEvalEmailSendStatus { get; set; } 
         public DateTime? EstReopeningDate { get; set; }
