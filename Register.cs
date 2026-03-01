@@ -102,6 +102,7 @@ namespace asprule1020.Models
         public DateTime? EstPoHeadEvalDate { get; set; } 
         public string? EstPoHeadRemarks { get; set; } 
         public string? EstEvalEmailSendStatus { get; set; } 
+        public DateTime? EstClosureDate { get; set; }
         public DateTime? EstReopeningDate { get; set; }
         public string? EstReasonForUpdate { get; set; } = string.Empty;
         public bool? EstIsUpdating { get; set; } = false; 
