@@ -104,6 +104,8 @@ namespace asprule1020.Models
         public string? EstEvalEmailSendStatus { get; set; } 
         public DateTime? EstClosureDate { get; set; }
         public DateTime? EstReopeningDate { get; set; }
+        public DateTime? EstFiledClosureDate { get; set; }
+
         public string? EstReasonForUpdate { get; set; } = string.Empty;
         public bool? EstIsUpdating { get; set; } = false; 
         public bool? EstIsEmailApprovedSent { get; set; } = false;
