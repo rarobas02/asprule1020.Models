@@ -55,6 +55,8 @@ namespace asprule1020.Models
         [MaxLength(50)]
         public string EstOwnerLast { get; set; } 
         [Required]
+        public string EstTaxIdentificationNumber { get; set; } 
+        [Required]
         public string EstCurrentCap { get; set; } 
         [Required]
         public string EstTotalAssets { get; set; } 
