@@ -10,6 +10,6 @@ namespace asprule1020.Models.ViewModel
     {
         public Register Register { get; set; } = new Register();
         public  EvaluationChecklist CheckList{ get; set; } = new EvaluationChecklist();
-        public EvaluationRemarks Remarks { get; set; } = new EvaluationRemarks();
+        public EvaluationRemark Remarks { get; set; } = new EvaluationRemark();
     }
 }

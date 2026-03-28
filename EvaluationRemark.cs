@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace asprule1020.Models
 {
-    public class EvaluationRemarks
+    public class EvaluationRemark
     {
         public Guid Id { get; set; }
         public Guid? RegisterId { get; set; }
